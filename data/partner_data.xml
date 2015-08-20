@@ -1,0 +1,7 @@
+<openerp>
+    <data>
+        <record id="partner_pos_generic" model="res.partner">
+            <field name="name">Final consumption</field>
+        </record>
+    </data>
+</openerp>

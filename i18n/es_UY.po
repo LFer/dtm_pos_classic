@@ -1,0 +1,189 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* dtm_pos_classic
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0-20150213\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-26 19:12+0000\n"
+"PO-Revision-Date: 2015-03-26 19:12+0000\n"
+"Last-Translator: <Alexia Rodriguez>\n"
+"Language-Team: Datamatic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dtm_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+msgid "(update)"
+msgstr "(actualizar)"
+
+#. module: dtm_pos_classic
+#: model:ir.actions.act_window,help:dtm_pos_classic.action_pos_classic
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to use the POS Classic.\n"
+"              </p><p>\n"
+"                To use the POS Classic you must click this.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clickee para user la TPV clásica.\n"
+"              </p><p>\n"
+"                Para usar la TPV clásica usted debe clickear esto.\n"
+"              </p>\n"
+"            "
+
+#. module: dtm_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+msgid "Accounting Information"
+msgstr "Información contable"
+
+#. module: dtm_pos_classic
+#: model:ir.model,name:dtm_pos_classic.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Comprobantes contables"
+
+#. module: dtm_pos_classic
+#: selection:pos.config,pos_default:0
+msgid "Classic POS"
+msgstr "TPV clásica"
+
+#. module: dtm_pos_classic
+#: code:addons/dtm_pos_classic/models/point_of_sale.py:267
+#, python-format
+msgid "Configuration Error!"
+msgstr "Error de configuración!"
+
+#. module: dtm_pos_classic
+#: field:pos.config,pos_default:0
+#: selection:pos.config,pos_default:0
+msgid "Default POS"
+msgstr "TPV por defecto"
+
+#. module: dtm_pos_classic
+#: field:pos.config,journal_default:0
+msgid "Default journal to pay"
+msgstr "Diario de pago por defecto"
+
+#. module: dtm_pos_classic
+#: code:addons/dtm_pos_classic/models/point_of_sale.py:276
+#: code:addons/dtm_pos_classic/models/point_of_sale.py:334
+#, python-format
+msgid "Error!"
+msgstr "Error!"
+
+#. module: dtm_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+msgid "Extra Info"
+msgstr "Información extra"
+
+#. module: dtm_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+msgid "General Information"
+msgstr "Información general"
+
+#. module: dtm_pos_classic
+#: field:pos.config,invoice_pay:0
+msgid "Make payments of the invoice"
+msgstr "Realizar pagos de la factura"
+
+#. module: dtm_pos_classic
+#: code:addons/dtm_pos_classic/models/point_of_sale.py:73
+#, python-format
+msgid "Needs to pay {0} before to make the payment."
+msgstr "Necesita pagar {0} antes de realizar el pago."
+
+#. module: dtm_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: dtm_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+msgid "Order lines"
+msgstr "Líneas de venta"
+
+#. module: dtm_pos_classic
+#: code:addons/dtm_pos_classic/models/point_of_sale.py:174
+#: code:addons/dtm_pos_classic/models/point_of_sale.py:311
+#: code:addons/dtm_pos_classic/models/point_of_sale.py:343
+#: code:addons/dtm_pos_classic/wizards/pos_session_opening.py:19
+#: model:ir.actions.act_window,name:dtm_pos_classic.action_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+#, python-format
+msgid "POS Classic"
+msgstr "TPV clásica"
+
+#. module: dtm_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+msgid "Payment"
+msgstr "Pago"
+
+#. module: dtm_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: dtm_pos_classic
+#: model:ir.model,name:dtm_pos_classic.model_pos_order
+msgid "Point of Sale"
+msgstr "Terminal Punto de Venta"
+
+#. module: dtm_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+msgid "Products"
+msgstr "Productos"
+
+#. module: dtm_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+msgid "Re-Print"
+msgstr "Reimprimir"
+
+#. module: dtm_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+msgid "Reprint"
+msgstr "Reimprimir"
+
+#. module: dtm_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+msgid "Return Products"
+msgstr "Devolución de productos"
+
+#. module: dtm_pos_classic
+#: code:addons/dtm_pos_classic/models/point_of_sale.py:11
+#: field:pos.order,salesman_id:0
+#, python-format
+msgid "Salesman"
+msgstr "Vendedor"
+
+#. module: dtm_pos_classic
+#: view:pos.order:dtm_pos_classic.view_pos_classic_form
+msgid "Statement lines"
+msgstr "Líneas extracto"
+
+#. module: dtm_pos_classic
+#: code:addons/dtm_pos_classic/models/point_of_sale.py:266
+#, python-format
+msgid "There is no receivable account defined to make payment for the partner: \"%s\" (id:%d)."
+msgstr "No hay cuenta de recepcion definida para realizar el pago del cliente: \"%s\" (id:%d)."
+
+#. module: dtm_pos_classic
+#: code:addons/dtm_pos_classic/models/point_of_sale.py:264
+#, python-format
+msgid "There is no receivable account defined to make payment."
+msgstr "No hay cuenta de recepcion definida para realizar el pago."
+
+#. module: dtm_pos_classic
+#: code:addons/dtm_pos_classic/models/point_of_sale.py:335
+#, python-format
+msgid "You cannot use the session of another users. This session is owned by %s. Please first close this one to use this point of sale."
+msgstr "No puede usar la sesión de otros usuarios. Este sesión fue creada por %s. Debe cerrarla antes de usar esta TPV."
+
+#. module: dtm_pos_classic
+#: code:addons/dtm_pos_classic/models/point_of_sale.py:276
+#, python-format
+msgid "You have to open at least one cashbox."
+msgstr "Al menos necesita abrir una caja."
+
