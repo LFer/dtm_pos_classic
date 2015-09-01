@@ -11,11 +11,20 @@ class pos_order(models.Model):
     def _get_default_partner(self):
         return self.env.ref('dtm_pos_classic.partner_pos_generic').id
 
-    salesman_id = fields.Many2one(comodel_name='res.partner', string=_('Salesman'))
-    partner_id = fields.Many2one(comodel_name='res.partner', string='Customer',
+    def _get_default_partner_id(self):
+        return self.env.ref('dtm_pos_classic.partner_id').id
+
+    salesman_id = fields.Many2one(comodel_name='res.partner',
+                                  string='Salesman',
+                                  )#default=lambda self: self.env.partner,
+
+    partner_id = fields.Many2one(comodel_name='res.partner',
+                                 string='Customer',
                                  states={'draft': [('readonly', False)], 'paid': [('readonly', False)]},
                                  default=_get_default_partner)
-    payment_term_id = fields.Many2one(comodel_name='account.payment.term', string='Payment Term')
+
+    payment_term_id = fields.Many2one(comodel_name='account.payment.term',
+                                      string='Payment Term')
 
     @api.multi
     def refund_classic(self):
@@ -148,7 +157,7 @@ class pos_order(models.Model):
                 'payment_rate_currency_id',
             ])
 
-            voucher_fields['journal_id'] = self . session_id . config_id . journal_default . id
+#            voucher_fields['journal_id'] = self . session_id . config_id . journal_default . id
 
             voucher_fields . update (
                 account_voucher_obj . with_context ( new_context ) . onchange_date (
@@ -204,13 +213,14 @@ class pos_order(models.Model):
             voucher_fields['line_cr_ids'] = []
             voucher_fields['line_dr_ids'] = [] #agregado
 
+            """
             i = 0
             for line_cr in line_cr_ids:
                 voucher_fields['line_cr_ids'].append([i, False, line_cr])
                 i += 1
 
             for line_cr in line_dr_ids:
-                voucher_fields['line_dr_ids'].append([i, False, line_cr])                
+                voucher_fields['line_dr_ids'].append([i, False, line_cr])
 
             """
             i = 0
@@ -220,7 +230,7 @@ class pos_order(models.Model):
 
             for line_cr in line_dr_ids:
                 voucher_fields['line_dr_ids'].append([0, False, line_cr])
-            """                
+
 
             _logger.warning("VOUCHER_FIELDS NEW: {0}".format(voucher_fields))
 
