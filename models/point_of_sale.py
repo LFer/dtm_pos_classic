@@ -1,4 +1,5 @@
 from openerp import models, fields, _, api, exceptions
+import datetime
 import time
 import logging
 import ipdb as pdb
@@ -14,9 +15,15 @@ class pos_order(models.Model):
     def _get_default_partner_id(self):
         return self.env.ref('dtm_pos_classic.partner_id').id
 
+    @api.one
+    @api.depends('statement_ids.amount')#, 'tax_line.amount'
+    def _compute_amount(self):
+#        pdb.set_trace()
+        total = self.campito = sum(line.amount for line in self.statement_ids)
+
     salesman_id = fields.Many2one(comodel_name='res.partner',
                                   string='Salesman',
-                                  )#default=lambda self: self.env.partner,
+                                  )
 
     partner_id = fields.Many2one(comodel_name='res.partner',
                                  string='Customer',
@@ -25,6 +32,13 @@ class pos_order(models.Model):
 
     payment_term_id = fields.Many2one(comodel_name='account.payment.term',
                                       string='Payment Term')
+    # partir de aca agarro yo
+
+    amount_payment = fields.Float ('Restante a pagar', readonly=True)
+    campito = fields.Float ('Suma de las lineas', readonly=True, compute='_compute_amount')
+
+
+
 
     @api.multi
     def refund_classic(self):
@@ -365,6 +379,7 @@ class pos_order(models.Model):
         _logger.warning("UPDATE STATEMENT NEW VALS: {0}".format(vals))
 
         return vals
+
 
 
 class pos_config(models.Model):
