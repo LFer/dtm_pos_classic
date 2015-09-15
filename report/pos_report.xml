@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report
+            header="False"
+            
+            auto="False"
+            id="pos_report"
+            model="pos.order"
+            name="tpv"
+            rml="dtm_pos_classic/report/report_order.rml"
+            string="Factura" 
+            />            
+    </data>
+</openerp>

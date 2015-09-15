@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<document filename="test.pdf">
+    <template title="Invoices"   pageSize="(21.0cm,14.85cm)" leftMargin="0cm" rightMargin="0cm" topMargin="0cm" bottomMargin="0cm" showBoundary="1" >
+
+        <pageTemplate id="Factura"  >
+           
+            <frame id="t_doc"     x1="7.3cm" y1="12.0cm" width="2.25cm" height="0.6cm"/>
+
+            <frame id="n_doc"     x1="7.3cm" y1="12.6cm" width="2.25cm" height="0.6cm"/>
+
+
+
+            <frame id="rut"          x1="0.80cm" y1="9.80cm" width="06.0cm" height="01.00cm"/>
+
+            <frame id="c_final"      x1="6.8cm" y1="9.80cm" width="01.0cm" height="1.0cm"/>
+
+            <frame id="fecha"       x1="7.9cm"  y1="9.80cm" width="1.7cm" height="1.0cm"/>
+
+            <frame id="nomb_dir"        x1="0.8cm" y1="8.45cm" width="8.80cm" height="1.0cm"/>
+
+            <frame id="cod_desc_cant_imp"         x1="0.8cm" y1="2.8cm" width="8.8cm" height="5.15cm"/>
+
+            <frame id="tabla_precios"        x1="8.0cm" y1="1.45cm" width="1.65cm" height="1.3cm"/>
+
+            <!--frame id="iva"      x1="8.0cm" y1="1.88cm" width="1.65cm" height="00.43cm"/>
+
+            <frame id="sub_tot"      x1="8.0cm" y1="2.31cm" width="1.65cm" height="00.43cm"/-->
+
+            <!-- ################## Duplicado ################## -->
+
+            <frame id="t_doc2"     x1="17.8cm" y1="12.0cm" width="2.25cm" height="0.6cm"/>
+            <frame id="n_doc2"     x1="17.8cm" y1="12.6cm" width="2.25cm" height="0.6cm"/>
+
+
+
+            <frame id="rut2"          x1="11.3cm" y1="9.80cm" width="06.0cm" height="01.00cm"/>
+
+            <frame id="c_final2"      x1="17.3cm" y1="9.80cm" width="01.0cm" height="1.0cm"/>
+
+            <frame id="fecha2"       x1="18.4cm"  y1="9.80cm" width="1.7cm" height="1.0cm"/>
+
+            <frame id="nomb_dir2"        x1="11.3cm" y1="8.45cm" width="8.80cm" height="1.05cm"/>
+
+            <frame id="cod_desc_cant_imp2"         x1="11.3cm" y1="2.8cm" width="8.8cm" height="5.15cm"/>
+
+            <frame id="tabla_precios2"        x1="18.5cm" y1="1.45cm" width="1.65cm" height="1.3cm"/>
+
+            <!--frame id="iva2"      x1="18.5cm" y1="1.88cm" width="1.65cm" height="00.43cm"/>
+
+            <frame id="sub_tot2"      x1="18.5cm" y1="2.31cm" width="1.65cm" height="00.43cm"/-->    
+           
+        </pageTemplate>
+            
+    </template>
+
+    <stylesheet>
+        <blockTableStyle id="Standard_Outline">
+            <blockAlignment value="LEFT"/>
+            <blockValign value="TOP"/>
+        </blockTableStyle>
+
+        <initialize>
+            <paraStyle name="all" alignment="justify"/>
+        </initialize>
+        <paraStyle name="t_doc"  rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
+
+        <paraStyle name="t_doc2"  rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
+
+        <paraStyle name="n_doc"   rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
+
+        <paraStyle name="n_doc2"   rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
+
+        <paraStyle name="rut"       rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+
+        <paraStyle name="rut2"       rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+
+        <paraStyle name="c_final"   rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+
+        <paraStyle name="c_final2"   rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+
+        <paraStyle name="fecha"    rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+
+        <paraStyle name="fecha2"    rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+
+        <paraStyle name="nomb_dir"     rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+
+        <paraStyle name="nomb_dir2"     rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+
+        <paraStyle name="cod_desc_cant_imp"      rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+
+        <paraStyle name="cod_desc_cant_imp2"      rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+
+        <paraStyle name="tabla_precios"      rightIndent="0.0" leftIndent="0cm" fontSize="8"  leading="1" alignment="LEFT" spaceBefore="0cm" spaceAfter="0cm" fontName="Helvetica"/>
+
+        <paraStyle name="tabla_precios2"      rightIndent="0.0" leftIndent="0cm" fontSize="8"  leading="1" alignment="LEFT" spaceBefore="0.1cm" spaceAfter="0.1cm" fontName="Helvetica"/>
+
+        <!--paraStyle name="iva"     rightIndent="0.0" leftIndent="0.0" fontSize="8"  leading="1" alignment="LEFT"  spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+
+        <paraStyle name="iva2"     rightIndent="0.0" leftIndent="0.0" fontSize="8"  leading="1" alignment="LEFT"  spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+
+        <paraStyle name="sub_tot"     rightIndent="0.0" leftIndent="0.0" fontSize="8"  leading="1" alignment="LEFT"  spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+
+        <paraStyle name="sub_tot2"     rightIndent="0.0" leftIndent="0.0" fontSize="8"  leading="1" alignment="LEFT"  spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/-->
+
+        <blockTableStyle id="TableDet">
+            <blockAlignment value="LEFT"/>
+            <blockValign value="TOP"/>
+            <blockFont  name="Helvetica-Bold" size="8" leading="4"/>
+        </blockTableStyle>     
+    </stylesheet>
+
+<story>
+<para>[[ repeatIn(objects,'o') ]]</para>
+
+    <condPageBreak height="1"/><para style='t_doc'>Factura</para>
+        <nextFrame/>
+    <condPageBreak height="1"/><para style="n_doc">!n_doc!</para>
+        <nextFrame/>
+    <condPageBreak height="1"/><para style='rut'>!rut!</para>
+        <nextFrame/>
+    <condPageBreak height="1"/><para style='c_final'>!c_final!</para>
+        <nextFrame/>
+    <condPageBreak height="1"/><para style='fecha'>!fecha!</para>
+        <nextFrame/>
+    <condPageBreak height="1"/><para style='nomb_dir'>!nomb_dir!</para>
+        <nextFrame/>
+    <currentFrame name='cod_desc_cant_imp'/>
+        <section>
+            <blockTable colsWidths="2.45cm,3.95cm,0.65cm,1.7cm" style="TableDet">
+                <tr>
+                    <td><para>code</para></td>
+                    <td><para>desc</para></td>
+                    <td><para>cant</para></td>
+                    <td><para>imp</para></td>
+                </tr>
+            </blockTable>
+        </section>
+    <frameEnd/>
+    <currentFrame name='tabla_precios'/>
+        <section>
+            <blockTable colsWidths="1.65cm" style="TableDet">
+  <tr>
+    <td><para>sub_tot</para></td>
+  </tr>
+  <!--tr>
+    <td><para>iva</para></td>
+  </tr>
+  <tr>
+    <td><para>total</para></td>   
+  </tr-->
+            </blockTable>
+        </section>
+    <frameEnd/>
+    <condPageBreak height="1"/><para style='t_doc2'>Factura</para>
+        <nextFrame/>
+    <condPageBreak height="1"/><para style="n_doc2">!n_doc!</para>
+        <nextFrame/>
+    <condPageBreak height="1"/><para style='rut2'>!rut!</para>
+        <nextFrame/>
+    <condPageBreak height="1"/><para style='c_final2'>!c_final!</para>
+        <nextFrame/>
+    <condPageBreak height="1"/><para style='fecha2'>!fecha!</para>
+        <nextFrame/>
+    <condPageBreak height="1"/><para style='nomb_dir2'>!nomb_dir!</para>
+        <nextFrame/>
+    <currentFrame name='cod_desc_cant_imp2'/>
+        <section>
+            <blockTable colsWidths="2.45cm,3.95cm,0.65cm,1.7cm" style="TableDet">
+                <tr>
+                    <td><para>code</para></td>
+                    <td><para>desc</para></td>
+                    <td><para>cant</para></td>
+                    <td><para>imp</para></td>
+                </tr>
+            </blockTable>
+        </section>
+    <frameEnd/>
+    <!--currentFrame name='tabla_precios2'/>
+        <section>
+            <blockTable colsWidths="1.6" style="TableDet">
+                <tr>
+                    <td><para>sub_tot</para></td>
+                </tr>    
+                <tr>
+                    <td><para>iva</para></td>
+                </tr>
+                <tr>
+                    <td><para>total</para></td>
+                </tr>
+            </blockTable>
+        </section>
+    <frameEnd/-->
+</story>
+</document>
