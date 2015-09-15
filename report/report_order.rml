@@ -62,15 +62,15 @@
         <initialize>
             <paraStyle name="all" alignment="justify"/>
         </initialize>
-        <paraStyle name="t_doc"  rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
+        <paraStyle name="t_doc"  rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="0.0" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
 
         <paraStyle name="t_doc2"  rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
 
-        <paraStyle name="n_doc"   rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
+        <paraStyle name="n_doc"   rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
 
-        <paraStyle name="n_doc2"   rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
+        <paraStyle name="n_doc2"   rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
 
-        <paraStyle name="rut"       rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+        <paraStyle name="rut"       rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="0.0" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
         <paraStyle name="rut2"       rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
@@ -78,9 +78,9 @@
 
         <paraStyle name="c_final2"   rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
-        <paraStyle name="fecha"    rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+        <paraStyle name="fecha"    rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="0.0" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
-        <paraStyle name="fecha2"    rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+        <paraStyle name="fecha2"    rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="0.0" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
         <paraStyle name="nomb_dir"     rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
@@ -90,7 +90,7 @@
 
         <paraStyle name="cod_desc_cant_imp2"      rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
-        <paraStyle name="tabla_precios"      rightIndent="0.0" leftIndent="0cm" fontSize="8"  leading="1" alignment="LEFT" spaceBefore="0cm" spaceAfter="0cm" fontName="Helvetica"/>
+        <paraStyle name="tabla_precios"      rightIndent="0.0" leftIndent="0cm" fontSize="8"  leading="1" alignment="RIGHT" spaceBefore="0cm" spaceAfter="0cm" fontName="Helvetica"/>
 
         <paraStyle name="tabla_precios2"      rightIndent="0.0" leftIndent="0cm" fontSize="8"  leading="1" alignment="LEFT" spaceBefore="0.1cm" spaceAfter="0.1cm" fontName="Helvetica"/>
 
@@ -114,43 +114,57 @@
 
     <condPageBreak height="1"/><para style='t_doc'>Factura</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style="n_doc">!n_doc!</para>
+    <condPageBreak height="1"/><para style="n_doc">[[ (o.name) or '' ]]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='rut'>!rut!</para>
+    <condPageBreak height="1"/><para style='rut'>[[ (o.partner_id.rut) or '' ]]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='c_final'>!c_final!</para>
+    <condPageBreak height="1"/><para style='c_final'>!c_f!</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='fecha'>!fecha!</para>
+    <condPageBreak height="1"/><para style='fecha'>[[ (o.date_order) or '' ]]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style='nomb_dir'>!nomb_dir!</para>
         <nextFrame/>
     <currentFrame name='cod_desc_cant_imp'/>
         <section>
             <blockTable colsWidths="2.45cm,3.95cm,0.65cm,1.7cm" style="TableDet">
+                 <tr>
+                 <td><para>Codigo</para></td>
+                 <td><para>Descripcion</para></td>
+                 <td><para>Cantidad</para></td>
+                 <td><para>Importe</para></td>
+                 </tr>
                 <tr>
-                    <td><para>code</para></td>
-                    <td><para>desc</para></td>
-                    <td><para>cant</para></td>
-                    <td><para>imp</para></td>
+                  <!--Codigo-->
+                  <td>
+                    <para>[[ (o.lines.product_id.ref_pattern) or '' ]]</para>
+                  </td>
+                  <!--Descripcion-->
+                  <td>
+                    <para>[[ (o.lines.product_id.name) or '' ]]</para>
+                  </td>
+                  <td>
+                  <!--Cantidad-->
+                  <para>[[ (o.lines.qty) or '' ]]</para>
+                  </td>
+                  <!--Importe-->
+                  <td>
+                    <para>[[ (o.lines.price_subtotal_incl) or '' ]]</para>
+                  </td>                  
                 </tr>
             </blockTable>
+
         </section>
     <frameEnd/>
+
     <currentFrame name='tabla_precios'/>
         <section>
-            <blockTable colsWidths="1.65cm" style="TableDet">
-  <tr>
-    <td><para>sub_tot</para></td>
-  </tr>
-  <!--tr>
-    <td><para>iva</para></td>
-  </tr>
-  <tr>
-    <td><para>total</para></td>   
-  </tr-->
-            </blockTable>
+            <para>[[ (o.lines.price_subtotal) or '' ]]</para>
+            <!--para>[[ (o.lines.amount_total) or '' ]]</para-->
+            
         </section>
+
     <frameEnd/>
+
     <condPageBreak height="1"/><para style='t_doc2'>Factura</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style="n_doc2">!n_doc!</para>

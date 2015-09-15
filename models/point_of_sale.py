@@ -18,7 +18,7 @@ class pos_order(models.Model):
     @api.one
     @api.depends('statement_ids.amount')#, 'tax_line.amount'
     def _compute_amount(self):
-#        pdb.set_trace()
+        pdb.set_trace()
         total = self.campito = sum(line.amount for line in self.statement_ids)
         to_pay = self.amount_payment = self.amount_total - total
 
