@@ -14,6 +14,7 @@
         'data/partner_data.xml',
         'security/point_of_sale_security.xml',
         'security/ir.model.access.csv',
+        'report/pos_report.xml',
 
     ],
     'demo': [
