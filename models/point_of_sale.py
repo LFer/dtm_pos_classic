@@ -20,6 +20,7 @@ class pos_order(models.Model):
     def _compute_amount(self):
 #        pdb.set_trace()
         total = self.campito = sum(line.amount for line in self.statement_ids)
+        to_pay = self.amount_payment = self.amount_total - total
 
     salesman_id = fields.Many2one(comodel_name='res.partner',
                                   string='Salesman',
@@ -34,7 +35,7 @@ class pos_order(models.Model):
                                       string='Payment Term')
     # partir de aca agarro yo
 
-    amount_payment = fields.Float ('Restante a pagar', readonly=True)
+    amount_payment = fields.Float ('Restante a pagar', readonly=True, compute='_compute_amount')
     campito = fields.Float ('Suma de las lineas', readonly=True, compute='_compute_amount')
 
 
