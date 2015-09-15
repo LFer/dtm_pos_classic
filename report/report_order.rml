@@ -112,7 +112,7 @@
 <story>
 <para>[[ repeatIn(objects,'o') ]]</para>
 
-    <condPageBreak height="1"/><para style='t_doc'>Factura</para>
+    <condPageBreak height="1"/><para style='t_doc'>Pene</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style="n_doc">!n_doc!</para>
         <nextFrame/>
@@ -151,7 +151,7 @@
             </blockTable>
         </section>
     <frameEnd/>
-    <condPageBreak height="1"/><para style='t_doc2'>Factura</para>
+    <condPageBreak height="1"/><para style='t_doc2'>Pene</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style="n_doc2">!n_doc!</para>
         <nextFrame/>
