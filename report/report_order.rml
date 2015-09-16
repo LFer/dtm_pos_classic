@@ -3,7 +3,7 @@
     <template title="Invoices"   pageSize="(21.0cm,14.85cm)" leftMargin="0cm" rightMargin="0cm" topMargin="0cm" bottomMargin="0cm" showBoundary="1" >
 
         <pageTemplate id="Factura"  >
-           
+
             <frame id="t_doc"     x1="7.3cm" y1="12.0cm" width="2.25cm" height="0.6cm"/>
 
             <frame id="n_doc"     x1="7.3cm" y1="12.6cm" width="2.25cm" height="0.6cm"/>
@@ -47,10 +47,10 @@
 
             <!--frame id="iva2"      x1="18.5cm" y1="1.88cm" width="1.65cm" height="00.43cm"/>
 
-            <frame id="sub_tot2"      x1="18.5cm" y1="2.31cm" width="1.65cm" height="00.43cm"/-->    
-           
+            <frame id="sub_tot2"      x1="18.5cm" y1="2.31cm" width="1.65cm" height="00.43cm"/-->
+
         </pageTemplate>
-            
+
     </template>
 
     <stylesheet>
@@ -82,13 +82,13 @@
 
         <paraStyle name="fecha2"    rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="0.0" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
-        <paraStyle name="nomb_dir"     rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+        <paraStyle name="nomb_dir"     rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
-        <paraStyle name="nomb_dir2"     rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+        <paraStyle name="nomb_dir2"     rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
-        <paraStyle name="cod_desc_cant_imp"      rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+        <paraStyle name="cod_desc_cant_imp"      rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
-        <paraStyle name="cod_desc_cant_imp2"      rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+        <paraStyle name="cod_desc_cant_imp2"      rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
         <paraStyle name="tabla_precios"      rightIndent="0.0" leftIndent="0cm" fontSize="8"  leading="1" alignment="RIGHT" spaceBefore="0cm" spaceAfter="0cm" fontName="Helvetica"/>
 
@@ -105,8 +105,8 @@
         <blockTableStyle id="TableDet">
             <blockAlignment value="LEFT"/>
             <blockValign value="TOP"/>
-            <blockFont  name="Helvetica-Bold" size="8" leading="4"/>
-        </blockTableStyle>     
+            <blockFont  name="Helvetica-Bold" size="6" leading="1"/>
+        </blockTableStyle>
     </stylesheet>
 
 <story>
@@ -116,13 +116,15 @@
         <nextFrame/>
     <condPageBreak height="1"/><para style="n_doc">[[ (o.name) or '' ]]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='rut'>[[ (o.partner_id.rut) or '' ]]</para>
+    <condPageBreak height="1"/><para style='rut'>[[ (o.partner_id.identification_type == '1' and o.partner_id.identification ) or '']]</para>
+
+
         <nextFrame/>
-    <condPageBreak height="1"/><para style='c_final'>!c_f!</para>
+    <condPageBreak height="1"/><para style='c_final'>[[ (o.partner_id.identification_type == '0' and 'X' ) or '']]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style='fecha'>[[ (o.date_order) or '' ]]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='nomb_dir'>!nomb_dir!</para>
+    <condPageBreak height="1"/><para style='nomb_dir'>[[ (o.partner_id.name) or '' ]] </para><spacer length="0.3cm"/><para style='nomb_dir'>[[(o.partner_id.street) or '']]</para>
         <nextFrame/>
     <currentFrame name='cod_desc_cant_imp'/>
         <section>
@@ -149,42 +151,60 @@
                   <!--Importe-->
                   <td>
                     <para>[[ (o.lines.price_subtotal_incl) or '' ]]</para>
-                  </td>                  
+                  </td>
                 </tr>
             </blockTable>
 
         </section>
     <frameEnd/>
 
-    <currentFrame name='tabla_precios'/>
+    <!--currentFrame name='tabla_precios'/>
         <section>
             <para>[[ (o.lines.price_subtotal) or '' ]]</para>
-            <!--para>[[ (o.lines.amount_total) or '' ]]</para-->
-            
-        </section>
+            <para>[[ (o.lines.amount_total) or '' ]]</para>
+
+        </section-->
 
     <frameEnd/>
 
     <condPageBreak height="1"/><para style='t_doc2'>Factura</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style="n_doc2">!n_doc!</para>
+    <condPageBreak height="1"/><para style="n_doc2">[[ (o.name) or '' ]]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='rut2'>!rut!</para>
+    <condPageBreak height="1"/><para style='rut2'>[[ (o.partner_id.identification_type == '1' and o.partner_id.identification ) or '']]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='c_final2'>!c_final!</para>
+    <condPageBreak height="1"/><para style='c_final2'>[[ (o.partner_id.identification_type == '0' and 'X' ) or '']]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='fecha2'>!fecha!</para>
+    <condPageBreak height="1"/><para style='fecha2'>[[ (o.date_order) or '' ]]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='nomb_dir2'>!nomb_dir!</para>
+    <condPageBreak height="1"/><para style='nomb_dir2'>[[ (o.partner_id.name) or '' ]] </para><spacer length="0.3cm"/><para style='nomb_dir'>[[(o.partner_id.street) or '']]</para>
         <nextFrame/>
     <currentFrame name='cod_desc_cant_imp2'/>
         <section>
             <blockTable colsWidths="2.45cm,3.95cm,0.65cm,1.7cm" style="TableDet">
+                 <tr>
+                 <td><para>Codigo</para></td>
+                 <td><para>Descripcion</para></td>
+                 <td><para>Cantidad</para></td>
+                 <td><para>Importe</para></td>
+                 </tr>
                 <tr>
-                    <td><para>code</para></td>
-                    <td><para>desc</para></td>
-                    <td><para>cant</para></td>
-                    <td><para>imp</para></td>
+                  <!--Codigo-->
+                  <td>
+                    <para>[[ (o.lines.product_id.ref_pattern) or '' ]]</para>
+                  </td>
+                  <!--Descripcion-->
+                  <td>
+                    <para>[[ (o.lines.product_id.name) or '' ]]</para>
+                  </td>
+                  <td>
+                  <!--Cantidad-->
+                  <para>[[ (o.lines.qty) or '' ]]</para>
+                  </td>
+                  <!--Importe-->
+                  <td>
+                    <para>[[ (o.lines.price_subtotal_incl) or '' ]]</para>
+                  </td>
                 </tr>
             </blockTable>
         </section>
@@ -194,7 +214,7 @@
             <blockTable colsWidths="1.6" style="TableDet">
                 <tr>
                     <td><para>sub_tot</para></td>
-                </tr>    
+                </tr>
                 <tr>
                     <td><para>iva</para></td>
                 </tr>
