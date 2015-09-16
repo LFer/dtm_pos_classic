@@ -12,7 +12,7 @@
 
             <frame id="rut"          x1="0.80cm" y1="9.80cm" width="06.0cm" height="01.00cm"/>
 
-            <frame id="c_final"      x1="6.8cm" y1="9.80cm" width="01.0cm" height="1.0cm"/>
+            <frame id="c_final"      x1="6.8cm" y1="10.30cm" width="01.0cm" height="1.0cm"/>
 
             <frame id="fecha"       x1="7.9cm"  y1="9.80cm" width="1.7cm" height="1.0cm"/>
 
@@ -20,11 +20,11 @@
 
             <frame id="cod_desc_cant_imp"         x1="0.8cm" y1="2.8cm" width="8.8cm" height="5.15cm"/>
 
-            <frame id="tabla_precios"        x1="8.0cm" y1="1.45cm" width="1.65cm" height="1.3cm"/>
+            <frame id="sub_tot"      x1="8.0cm" y1="2.31cm" width="1.65cm" height="00.43cm"/>
 
-            <!--frame id="iva"      x1="8.0cm" y1="1.88cm" width="1.65cm" height="00.43cm"/>
+            <frame id="iva"      x1="8.0cm" y1="1.88cm" width="1.65cm" height="00.43cm"/>
 
-            <frame id="sub_tot"      x1="8.0cm" y1="2.31cm" width="1.65cm" height="00.43cm"/-->
+            <frame id="tabla_precios"        x1="8.0cm" y1="1.45cm" width="1.65cm" height="0.43cm"/>
 
             <!-- ################## Duplicado ################## -->
 
@@ -35,7 +35,7 @@
 
             <frame id="rut2"          x1="11.3cm" y1="9.80cm" width="06.0cm" height="01.00cm"/>
 
-            <frame id="c_final2"      x1="17.3cm" y1="9.80cm" width="01.0cm" height="1.0cm"/>
+            <frame id="c_final2"      x1="17.3cm" y1="10.30cm" width="01.0cm" height="1.0cm"/>
 
             <frame id="fecha2"       x1="18.4cm"  y1="9.80cm" width="1.7cm" height="1.0cm"/>
 
@@ -43,11 +43,11 @@
 
             <frame id="cod_desc_cant_imp2"         x1="11.3cm" y1="2.8cm" width="8.8cm" height="5.15cm"/>
 
-            <frame id="tabla_precios2"        x1="18.5cm" y1="1.45cm" width="1.65cm" height="1.3cm"/>
+            <frame id="sub_tot2"      x1="18.5cm" y1="2.31cm" width="1.65cm" height="00.43cm"/>
 
-            <!--frame id="iva2"      x1="18.5cm" y1="1.88cm" width="1.65cm" height="00.43cm"/>
+            <frame id="iva2"      x1="18.5cm" y1="1.88cm" width="1.65cm" height="00.43cm"/>
 
-            <frame id="sub_tot2"      x1="18.5cm" y1="2.31cm" width="1.65cm" height="00.43cm"/-->
+            <frame id="tabla_precios2"        x1="18.5cm" y1="1.45cm" width="1.65cm" height="0.43cm"/>
 
         </pageTemplate>
 
@@ -62,7 +62,7 @@
         <initialize>
             <paraStyle name="all" alignment="justify"/>
         </initialize>
-        <paraStyle name="t_doc"  rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="0.0" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
+        <paraStyle name="t_doc"  rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
 
         <paraStyle name="t_doc2"  rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
 
@@ -74,9 +74,9 @@
 
         <paraStyle name="rut2"       rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
-        <paraStyle name="c_final"   rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+        <paraStyle name="c_final"   rightIndent="0.0" leftIndent="0.0" fontSize="33" leading="0" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
-        <paraStyle name="c_final2"   rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+        <paraStyle name="c_final2"   rightIndent="0.0" leftIndent="0.0" fontSize="33" leading="0" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
         <paraStyle name="fecha"    rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="0.0" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
@@ -86,7 +86,7 @@
 
         <paraStyle name="nomb_dir2"     rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
-        <paraStyle name="cod_desc_cant_imp"      rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+        <paraStyle name="cod_desc_cant_imp"      rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
         <paraStyle name="cod_desc_cant_imp2"      rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
@@ -132,7 +132,7 @@
                  <tr>
                  <td><para>Codigo</para></td>
                  <td><para>Descripcion</para></td>
-                 <td><para>Cantidad</para></td>
+                 <td><para style="cod_desc_cant_imp">C</para></td>
                  <td><para>Importe</para></td>
                  </tr>
                 <tr>
@@ -146,7 +146,7 @@
                   </td>
                   <td>
                   <!--Cantidad-->
-                  <para>[[ (o.lines.qty) or '' ]]</para>
+                  <para style="cod_desc_cant_imp">[[ (o.lines.qty) or '' ]]</para>
                   </td>
                   <!--Importe-->
                   <td>
@@ -164,7 +164,8 @@
             <para>[[ (o.lines.amount_total) or '' ]]</para>
 
         </section-->
-
+    <frameEnd/>
+    <frameEnd/>
     <frameEnd/>
 
     <condPageBreak height="1"/><para style='t_doc2'>Factura</para>
@@ -185,7 +186,7 @@
                  <tr>
                  <td><para>Codigo</para></td>
                  <td><para>Descripcion</para></td>
-                 <td><para>Cantidad</para></td>
+                 <td><para style="cod_desc_cant_imp">C</para></td>
                  <td><para>Importe</para></td>
                  </tr>
                 <tr>
@@ -199,7 +200,7 @@
                   </td>
                   <td>
                   <!--Cantidad-->
-                  <para>[[ (o.lines.qty) or '' ]]</para>
+                    <para style="cod_desc_cant_imp">[[ (o.lines.qty) or '' ]]</para>
                   </td>
                   <!--Importe-->
                   <td>
@@ -208,6 +209,8 @@
                 </tr>
             </blockTable>
         </section>
+    <frameEnd/>
+    <frameEnd/>
     <frameEnd/>
     <!--currentFrame name='tabla_precios2'/>
         <section>
