@@ -18,9 +18,17 @@ class pos_order(models.Model):
     @api.one
     @api.depends('statement_ids.amount')#, 'tax_line.amount'
     def _compute_amount(self):
-        pdb.set_trace()
+#        pdb.set_trace()
         total = self.campito = sum(line.amount for line in self.statement_ids)
         to_pay = self.amount_payment = self.amount_total - total
+        subtotal = self.suma_subtotal = sum(line.price_subtotal for line in self.lines)
+        print "Hola"
+
+    @api.one
+    @api.depends('lines')
+    def _compute_subtotal(self):
+        pdb.set_trace()
+        subtotal = self.suma_subtotal = sum(line.price_subtotal for line in self.lines)
 
     salesman_id = fields.Many2one(comodel_name='res.partner',
                                   string='Salesman',
@@ -37,6 +45,9 @@ class pos_order(models.Model):
 
     amount_payment = fields.Float ('Restante a pagar', readonly=True, compute='_compute_amount')
     campito = fields.Float ('Suma de las lineas', readonly=True, compute='_compute_amount')
+
+    suma_subtotal = fields.Float ('Subtotal', readonly=True, compute='_compute_amount')
+
 
 
 

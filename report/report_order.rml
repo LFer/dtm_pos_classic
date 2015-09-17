@@ -20,11 +20,15 @@
 
             <frame id="cod_desc_cant_imp"         x1="0.8cm" y1="2.8cm" width="8.8cm" height="5.15cm"/>
 
+            <frame id="tablita"      x1="8.0cm" y1="1.45cm" width="1.6cm" height="1.5cm"/>
+<!--
+
             <frame id="sub_tot"      x1="8.0cm" y1="2.31cm" width="1.65cm" height="00.43cm"/>
 
             <frame id="iva"      x1="8.0cm" y1="1.88cm" width="1.65cm" height="00.43cm"/>
 
             <frame id="tabla_precios"        x1="8.0cm" y1="1.45cm" width="1.65cm" height="0.43cm"/>
+-->
 
             <!-- ################## Duplicado ################## -->
 
@@ -43,11 +47,16 @@
 
             <frame id="cod_desc_cant_imp2"         x1="11.3cm" y1="2.8cm" width="8.8cm" height="5.15cm"/>
 
+            <!--frame id="subtotal2"      x1="18.5cm" y1="2.1cm" width="1.65cm" height="0.46cm"/-->
+
+            <frame id="tablita2"      x1="18.5cm" y1="1.45cm" width="1.6cm" height="1.5cm"/>
+<!--
             <frame id="sub_tot2"      x1="18.5cm" y1="2.31cm" width="1.65cm" height="00.43cm"/>
 
             <frame id="iva2"      x1="18.5cm" y1="1.88cm" width="1.65cm" height="00.43cm"/>
 
             <frame id="tabla_precios2"        x1="18.5cm" y1="1.45cm" width="1.65cm" height="0.43cm"/>
+-->
 
         </pageTemplate>
 
@@ -93,6 +102,8 @@
         <paraStyle name="tabla_precios"      rightIndent="0.0" leftIndent="0cm" fontSize="8"  leading="1" alignment="RIGHT" spaceBefore="0cm" spaceAfter="0cm" fontName="Helvetica"/>
 
         <paraStyle name="tabla_precios2"      rightIndent="0.0" leftIndent="0cm" fontSize="8"  leading="1" alignment="LEFT" spaceBefore="0.1cm" spaceAfter="0.1cm" fontName="Helvetica"/>
+
+        <paraStyle name="tablita"   rightIndent="0.0" leftIndent="0cm" fontSize="10"  leading="0" alignment="CENTER" spaceBefore="0cm" spaceAfter="0cm" fontName="Helvetica"/>
 
         <!--paraStyle name="iva"     rightIndent="0.0" leftIndent="0.0" fontSize="8"  leading="1" alignment="LEFT"  spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
@@ -155,18 +166,32 @@
                 </tr>
             </blockTable>
 
+
         </section>
-    <frameEnd/>
-
-    <!--currentFrame name='tabla_precios'/>
+        <frameEnd/>
         <section>
-            <para>[[ (o.lines.price_subtotal) or '' ]]</para>
-            <para>[[ (o.lines.amount_total) or '' ]]</para>
+            <blockTable>
+                 <tr>
+                 <td>
+                    <para style="tablita">[[ (o.suma_subtotal) or '' ]]</para>
+                    <spacer length="0.2cm"/>
+                </td>
+                 </tr>
+                <tr>
+                  <td>
+                  <para style="tablita">[[ (o.amount_tax) or '' ]]</para>
+                  <spacer length="0.2cm"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <para style="tablita">[[ (o.amount_total) or '' ]]</para>
+                  </td>
+                </tr>
+            </blockTable>
 
-        </section-->
-    <frameEnd/>
-    <frameEnd/>
-    <frameEnd/>
+        </section>
+        <frameEnd/>
 
     <condPageBreak height="1"/><para style='t_doc2'>Factura</para>
         <nextFrame/>
@@ -209,23 +234,29 @@
                 </tr>
             </blockTable>
         </section>
-    <frameEnd/>
-    <frameEnd/>
-    <frameEnd/>
-    <!--currentFrame name='tabla_precios2'/>
+        <frameEnd/>
+
         <section>
-            <blockTable colsWidths="1.6" style="TableDet">
+            <blockTable>
+                 <tr>
+                 <td>
+                    <para style="tablita">[[ (o.suma_subtotal) or '' ]]</para>
+                    <spacer length="0.2cm"/>
+                </td>
+                 </tr>
                 <tr>
-                    <td><para>sub_tot</para></td>
+                  <td>
+                  <para style="tablita">[[ (o.amount_tax) or '' ]]</para>
+                  <spacer length="0.2cm"/>
+                  </td>
                 </tr>
                 <tr>
-                    <td><para>iva</para></td>
-                </tr>
-                <tr>
-                    <td><para>total</para></td>
+                  <td>
+                  <para style="tablita">[[ (o.amount_total) or '' ]]</para>
+                  </td>
                 </tr>
             </blockTable>
+
         </section>
-    <frameEnd/-->
 </story>
 </document>
