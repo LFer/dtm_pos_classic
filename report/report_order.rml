@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <document filename="test.pdf">
-    <template title="Invoices"   pageSize="(21.0cm,14.85cm)" leftMargin="0cm" rightMargin="0cm" topMargin="0cm" bottomMargin="0cm" showBoundary="1" >
+    <template title="Invoices"   pageSize="(21.0cm,14.85cm)" leftMargin="0cm" rightMargin="0cm" topMargin="0cm" bottomMargin="0cm" showBoundary="0" >
 
         <pageTemplate id="Factura"  >
 
@@ -256,7 +256,6 @@
                   </td>
                 </tr>
             </blockTable>
-
         </section>
 </story>
 </document>
