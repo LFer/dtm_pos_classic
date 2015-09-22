@@ -8,8 +8,6 @@
 
             <frame id="n_doc"     x1="7.3cm" y1="12.6cm" width="2.25cm" height="0.6cm"/>
 
-
-
             <frame id="rut"          x1="0.80cm" y1="9.80cm" width="06.0cm" height="01.00cm"/>
 
             <frame id="c_final"      x1="6.8cm" y1="10.30cm" width="01.0cm" height="1.0cm"/>
@@ -21,21 +19,12 @@
             <frame id="cod_desc_cant_imp"         x1="0.8cm" y1="2.8cm" width="8.8cm" height="5.15cm"/>
 
             <frame id="tablita"      x1="8.0cm" y1="1.45cm" width="1.6cm" height="1.5cm"/>
-<!--
-
-            <frame id="sub_tot"      x1="8.0cm" y1="2.31cm" width="1.65cm" height="00.43cm"/>
-
-            <frame id="iva"      x1="8.0cm" y1="1.88cm" width="1.65cm" height="00.43cm"/>
-
-            <frame id="tabla_precios"        x1="8.0cm" y1="1.45cm" width="1.65cm" height="0.43cm"/>
--->
 
             <!-- ################## Duplicado ################## -->
 
             <frame id="t_doc2"     x1="17.8cm" y1="12.0cm" width="2.25cm" height="0.6cm"/>
+
             <frame id="n_doc2"     x1="17.8cm" y1="12.6cm" width="2.25cm" height="0.6cm"/>
-
-
 
             <frame id="rut2"          x1="11.3cm" y1="9.80cm" width="06.0cm" height="01.00cm"/>
 
@@ -47,16 +36,7 @@
 
             <frame id="cod_desc_cant_imp2"         x1="11.3cm" y1="2.8cm" width="8.8cm" height="5.15cm"/>
 
-            <!--frame id="subtotal2"      x1="18.5cm" y1="2.1cm" width="1.65cm" height="0.46cm"/-->
-
             <frame id="tablita2"      x1="18.5cm" y1="1.45cm" width="1.6cm" height="1.5cm"/>
-<!--
-            <frame id="sub_tot2"      x1="18.5cm" y1="2.31cm" width="1.65cm" height="00.43cm"/>
-
-            <frame id="iva2"      x1="18.5cm" y1="1.88cm" width="1.65cm" height="00.43cm"/>
-
-            <frame id="tabla_precios2"        x1="18.5cm" y1="1.45cm" width="1.65cm" height="0.43cm"/>
--->
 
         </pageTemplate>
 
@@ -105,14 +85,6 @@
 
         <paraStyle name="tablita"   rightIndent="0.0" leftIndent="0cm" fontSize="10"  leading="0" alignment="CENTER" spaceBefore="0cm" spaceAfter="0cm" fontName="Helvetica"/>
 
-        <!--paraStyle name="iva"     rightIndent="0.0" leftIndent="0.0" fontSize="8"  leading="1" alignment="LEFT"  spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
-
-        <paraStyle name="iva2"     rightIndent="0.0" leftIndent="0.0" fontSize="8"  leading="1" alignment="LEFT"  spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
-
-        <paraStyle name="sub_tot"     rightIndent="0.0" leftIndent="0.0" fontSize="8"  leading="1" alignment="LEFT"  spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
-
-        <paraStyle name="sub_tot2"     rightIndent="0.0" leftIndent="0.0" fontSize="8"  leading="1" alignment="LEFT"  spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/-->
-
         <blockTableStyle id="TableDet">
             <blockAlignment value="LEFT"/>
             <blockValign value="TOP"/>
@@ -123,77 +95,49 @@
 <story>
 <para>[[ repeatIn(objects,'o') ]]</para>
 
-    <condPageBreak height="1"/><para style='t_doc'>Factura</para>
+    <condPageBreak height="1"/><para style='t_doc'>[[ (o.partner_id.identification_type == '1' and 'Factura' ) or 'Contado']]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style="n_doc">[[ (o.name) or '' ]]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style='rut'>[[ (o.partner_id.identification_type == '1' and o.partner_id.identification ) or '']]</para>
-
-
         <nextFrame/>
     <condPageBreak height="1"/><para style='c_final'>[[ (o.partner_id.identification_type == '0' and 'X' ) or '']]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='fecha'>[[ (o.date_order) or '' ]]</para>
+    <condPageBreak height="1"/><para style='fecha'>[[ len ( o.date_order ) > 10 and format(o.date_order[:10] ) or format(o.date_order)]]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style='nomb_dir'>[[ (o.partner_id.name) or '' ]] </para><spacer length="0.3cm"/><para style='nomb_dir'>[[(o.partner_id.street) or '']]</para>
         <nextFrame/>
     <currentFrame name='cod_desc_cant_imp'/>
         <section>
             <blockTable colsWidths="2.45cm,3.95cm,0.65cm,1.7cm" style="TableDet">
-                 <tr>
-                 <td><para>Codigo</para></td>
-                 <td><para>Descripcion</para></td>
-                 <td><para style="cod_desc_cant_imp">C</para></td>
-                 <td><para>Importe</para></td>
-                 </tr>
-                <tr>
-                  <!--Codigo-->
-                  <td>
-                    <para>[[ (o.lines.product_id.ref_pattern) or '' ]]</para>
-                  </td>
-                  <!--Descripcion-->
-                  <td>
-                    <para>[[ (o.lines.product_id.name) or '' ]]</para>
-                  </td>
-                  <td>
-                  <!--Cantidad-->
-                  <para style="cod_desc_cant_imp">[[ (o.lines.qty) or '' ]]</para>
-                  </td>
-                  <!--Importe-->
-                  <td>
-                    <para>[[ (o.lines.price_subtotal_incl) or '' ]]</para>
-                  </td>
+                <tr>[[ repeatIn(o.lines,'l') ]]
+                <!--Codigo-->
+                    <td><para style="cod_desc_cant_imp">[[ (l.product_id.ref_pattern) or '' ]]</para></td>
+                <!--Descripcion-->
+                    <td><para style="cod_desc_cant_imp">[[ len ( l.product_id.name ) > 13 and format(l.product_id.name[:10] + '...') or format(l.product_id.name)]]</para></td>
+                <!--Cantidad-->
+                    <td><para style="cod_desc_cant_imp">[[ (l.qty) or '' ]]</para></td>
+                <!--Importe-->
+                    <td><para style="cod_desc_cant_imp">[[ (l.price_subtotal_incl) or '' ]]</para></td>
                 </tr>
             </blockTable>
-
-
         </section>
         <frameEnd/>
         <section>
             <blockTable>
-                 <tr>
-                 <td>
-                    <para style="tablita">[[ (o.suma_subtotal) or '' ]]</para>
-                    <spacer length="0.2cm"/>
-                </td>
-                 </tr>
                 <tr>
-                  <td>
-                  <para style="tablita">[[ (o.amount_tax) or '' ]]</para>
-                  <spacer length="0.2cm"/>
-                  </td>
+                    <td><para style="tablita" alignment="RIGHT">[[ (o.suma_subtotal) or '' ]]</para><spacer length="0.2cm"/></td>
                 </tr>
                 <tr>
-                  <td>
-                  <para style="tablita">[[ (o.amount_total) or '' ]]</para>
-                  </td>
+                    <td><para style="tablita" alignment="RIGHT">[[ (o.amount_tax) or '' ]]</para><spacer length="0.2cm"/></td>
+                </tr>
+                <tr>
+                    <td><para style="tablita" alignment="RIGHT">[[ (o.amount_total) or '' ]]</para></td>
                 </tr>
             </blockTable>
-
         </section>
         <frameEnd/>
-
-    <condPageBreak height="1"/><para style='t_doc2'>Factura</para>
+    <condPageBreak height="1"/><para style='t_doc2'>[[ (o.partner_id.identification_type == '1' and 'Factura' ) or 'Contado']]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style="n_doc2">[[ (o.name) or '' ]]</para>
         <nextFrame/>
@@ -201,59 +145,36 @@
         <nextFrame/>
     <condPageBreak height="1"/><para style='c_final2'>[[ (o.partner_id.identification_type == '0' and 'X' ) or '']]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='fecha2'>[[ (o.date_order) or '' ]]</para>
+    <condPageBreak height="1"/><para style='fecha2'>[[ len ( o.date_order ) > 10 and format(o.date_order[:10] ) or format(o.date_order)]]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style='nomb_dir2'>[[ (o.partner_id.name) or '' ]] </para><spacer length="0.3cm"/><para style='nomb_dir'>[[(o.partner_id.street) or '']]</para>
         <nextFrame/>
     <currentFrame name='cod_desc_cant_imp2'/>
         <section>
             <blockTable colsWidths="2.45cm,3.95cm,0.65cm,1.7cm" style="TableDet">
-                 <tr>
-                 <td><para>Codigo</para></td>
-                 <td><para>Descripcion</para></td>
-                 <td><para style="cod_desc_cant_imp">C</para></td>
-                 <td><para>Importe</para></td>
-                 </tr>
-                <tr>
-                  <!--Codigo-->
-                  <td>
-                    <para>[[ (o.lines.product_id.ref_pattern) or '' ]]</para>
-                  </td>
-                  <!--Descripcion-->
-                  <td>
-                    <para>[[ (o.lines.product_id.name) or '' ]]</para>
-                  </td>
-                  <td>
-                  <!--Cantidad-->
-                    <para style="cod_desc_cant_imp">[[ (o.lines.qty) or '' ]]</para>
-                  </td>
-                  <!--Importe-->
-                  <td>
-                    <para>[[ (o.lines.price_subtotal_incl) or '' ]]</para>
-                  </td>
+                <tr>[[ repeatIn(o.lines,'l') ]]
+                <!--Codigo-->
+                    <td><para style="cod_desc_cant_imp">[[ (l.product_id.ref_pattern) or '' ]]</para></td>
+                <!--Descripcion-->
+                    <td><para style="cod_desc_cant_imp">[[ len ( l.product_id.name ) > 13 and format(l.product_id.name[:10] + '...') or format(l.product_id.name)]]</para></td>
+                <!--Cantidad-->
+                    <td><para style="cod_desc_cant_imp">[[ (l.qty) or '' ]]</para></td>
+                <!--Importe-->
+                    <td><para style="cod_desc_cant_imp">[[ (l.price_subtotal_incl) or '' ]]</para></td>
                 </tr>
             </blockTable>
         </section>
         <frameEnd/>
-
         <section>
             <blockTable>
-                 <tr>
-                 <td>
-                    <para style="tablita">[[ (o.suma_subtotal) or '' ]]</para>
-                    <spacer length="0.2cm"/>
-                </td>
-                 </tr>
                 <tr>
-                  <td>
-                  <para style="tablita">[[ (o.amount_tax) or '' ]]</para>
-                  <spacer length="0.2cm"/>
-                  </td>
+                    <td><para style="tablita" alignment="RIGHT">[[ (o.suma_subtotal) or '' ]]</para><spacer length="0.2cm"/></td>
                 </tr>
                 <tr>
-                  <td>
-                  <para style="tablita">[[ (o.amount_total) or '' ]]</para>
-                  </td>
+                    <td><para style="tablita" alignment="RIGHT">[[ (o.amount_tax) or '' ]]</para><spacer length="0.2cm"/></td>
+                </tr>
+                <tr>
+                    <td><para style="tablita" alignment="RIGHT">[[ (o.amount_total) or '' ]]</para></td>
                 </tr>
             </blockTable>
         </section>
