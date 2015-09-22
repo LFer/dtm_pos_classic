@@ -1,5 +1,5 @@
 {
-    'name': 'Point Of Sale - Classic UI :)',
+    'name': 'Point Of Sale - Classic UI',
     'version': '1.0',
     'depends': ['base', 'dtm_multi_store', 'point_of_sale'],
     'author': 'Alexia Rodriguez',
