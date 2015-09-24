@@ -97,7 +97,7 @@
 
     <condPageBreak height="1"/><para style='t_doc'>[[ (o.partner_id.identification_type == '1' and 'Factura' ) or 'Contado']]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style="n_doc">[[ (o.name) or '' ]]</para>
+      <condPageBreak height="1"/><para style="n_doc">[[ (o.name)[4:] or '' ]]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style='rut'>[[ (o.partner_id.identification_type == '1' and o.partner_id.identification ) or '']]</para>
         <nextFrame/>
@@ -139,7 +139,7 @@
         <frameEnd/>
     <condPageBreak height="1"/><para style='t_doc2'>[[ (o.partner_id.identification_type == '1' and 'Factura' ) or 'Contado']]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style="n_doc2">[[ (o.name) or '' ]]</para>
+    <condPageBreak height="1"/><para style="n_doc2">[[ (o.name)[4:] or '' ]]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style='rut2'>[[ (o.partner_id.identification_type == '1' and o.partner_id.identification ) or '']]</para>
         <nextFrame/>
