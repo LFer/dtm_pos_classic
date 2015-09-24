@@ -103,7 +103,7 @@
         <nextFrame/>
     <condPageBreak height="1"/><para style='c_final'>[[ (o.partner_id.identification_type == '0' and 'X' ) or '']]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='fecha'>[[ len ( o.date_order ) > 10 and format(o.date_order[:10] ) or format(o.date_order)]]</para>
+    <condPageBreak height="1"/><para style='fecha'>[[ len ('/'.join((o.date_order).split('-'))) > 10 and format('/'.join((o.date_order).split('-')) ) or format('/'.join((o.date_order).split('-')))]]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style='nomb_dir'>[[ (o.partner_id.name) or '' ]] </para><spacer length="0.3cm"/><para style='nomb_dir'>[[(o.partner_id.street) or '']]</para>
         <nextFrame/>
@@ -145,7 +145,7 @@
         <nextFrame/>
     <condPageBreak height="1"/><para style='c_final2'>[[ (o.partner_id.identification_type == '0' and 'X' ) or '']]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='fecha2'>[[ len ( o.date_order ) > 10 and format(o.date_order[:10] ) or format(o.date_order)]]</para>
+    <condPageBreak height="1"/><para style='fecha2'>[[ len ('/'.join((o.date_order).split('-'))) > 10 and format('/'.join((o.date_order).split('-')) ) or format('/'.join((o.date_order).split('-')))]]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style='nomb_dir2'>[[ (o.partner_id.name) or '' ]] </para><spacer length="0.3cm"/><para style='nomb_dir'>[[(o.partner_id.street) or '']]</para>
         <nextFrame/>
