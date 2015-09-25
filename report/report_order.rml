@@ -103,7 +103,7 @@
         <nextFrame/>
     <condPageBreak height="1"/><para style='c_final'>[[ (o.partner_id.identification_type == '0' and 'X' ) or '']]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='fecha'>[[ len ('/'.join((o.date_order).split('-'))) > 10 and format('/'.join((o.date_order).split('-')) ) or format('/'.join((o.date_order).split('-')))]]</para>
+    <condPageBreak height="1"/><para style='fecha'>[[ len ('/'.join((o.date).split('-'))) > 10 and format(('/'.join((o.date).split('-')))[:10] ) or format('/'.join((o.date).split('-')))]]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style='nomb_dir'>[[ (o.partner_id.name) or '' ]] </para><spacer length="0.3cm"/><para style='nomb_dir'>[[(o.partner_id.street) or '']]</para>
         <nextFrame/>
@@ -116,7 +116,7 @@
                 <!--Descripcion-->
                     <td><para style="cod_desc_cant_imp">[[ len ( l.product_id.name ) > 13 and format(l.product_id.name[:10] + '...') or format(l.product_id.name)]]</para></td>
                 <!--Cantidad-->
-                    <td><para style="cod_desc_cant_imp">[[ (l.qty) or '' ]]</para></td>
+                    <td><para style="cod_desc_cant_imp">[[ str(int(l.qty)) or '' ]]</para></td>
                 <!--Importe-->
                     <td><para style="cod_desc_cant_imp">[[ (l.price_subtotal_incl) or '' ]]</para></td>
                 </tr>
@@ -145,7 +145,7 @@
         <nextFrame/>
     <condPageBreak height="1"/><para style='c_final2'>[[ (o.partner_id.identification_type == '0' and 'X' ) or '']]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='fecha2'>[[ len ('/'.join((o.date_order).split('-'))) > 10 and format('/'.join((o.date_order).split('-')) ) or format('/'.join((o.date_order).split('-')))]]</para>
+    <condPageBreak height="1"/><para style='fecha2'>[[ len ('/'.join((o.date).split('-'))) > 10 and format(('/'.join((o.date).split('-')))[:10] ) or format('/'.join((o.date).split('-')))]]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style='nomb_dir2'>[[ (o.partner_id.name) or '' ]] </para><spacer length="0.3cm"/><para style='nomb_dir'>[[(o.partner_id.street) or '']]</para>
         <nextFrame/>
@@ -158,7 +158,7 @@
                 <!--Descripcion-->
                     <td><para style="cod_desc_cant_imp">[[ len ( l.product_id.name ) > 13 and format(l.product_id.name[:10] + '...') or format(l.product_id.name)]]</para></td>
                 <!--Cantidad-->
-                    <td><para style="cod_desc_cant_imp">[[ (l.qty) or '' ]]</para></td>
+                    <td><para style="cod_desc_cant_imp">[[ str(int(l.qty)) or '' ]]</para></td>
                 <!--Importe-->
                     <td><para style="cod_desc_cant_imp">[[ (l.price_subtotal_incl) or '' ]]</para></td>
                 </tr>
