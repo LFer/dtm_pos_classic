@@ -1,4 +1,5 @@
 from openerp import models, fields, _, api, exceptions
+from openerp.tools.misc import DEFAULT_SERVER_DATE_FORMAT
 import datetime
 import time
 import logging
@@ -18,11 +19,14 @@ class pos_order(models.Model):
     @api.one
     @api.depends('statement_ids.amount')#, 'tax_line.amount'
     def _compute_amount(self):
-#        pdb.set_trace()
         total = self.campito = sum(line.amount for line in self.statement_ids)
         to_pay = self.amount_payment = self.amount_total - total
         subtotal = self.suma_subtotal = sum(line.price_subtotal for line in self.lines)
-        print "Hola"
+  
+    @api.one
+    def _date_fmt(self):
+        fecha = time.strptime((str(self.date_order))[:10],DEFAULT_SERVER_DATE_FORMAT)
+        self.fecha_report = "%02d/%02d/%4d" % (fecha.tm_mday,fecha.tm_mon,fecha.tm_year)
 
     @api.one
     @api.depends('lines')
@@ -44,12 +48,12 @@ class pos_order(models.Model):
     # partir de aca agarro yo
 
     amount_payment = fields.Float ('Restante a pagar', readonly=True, compute='_compute_amount')
+
     campito = fields.Float ('Suma de las lineas', readonly=True, compute='_compute_amount')
 
     suma_subtotal = fields.Float ('Subtotal', readonly=True, compute='_compute_amount')
 
-
-
+    fecha_report = fields.Text (string = 'fecha_report', readonly=True, compute='_date_fmt')
 
 
     @api.multi
@@ -391,6 +395,7 @@ class pos_order(models.Model):
         _logger.warning("UPDATE STATEMENT NEW VALS: {0}".format(vals))
 
         return vals
+    
 
 
 

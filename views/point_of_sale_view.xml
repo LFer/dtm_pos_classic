@@ -20,8 +20,8 @@
                 <form string="POS Classic">
                     <header>
                         <button name="process_full_order" string="Payment" class="oe_highlight" type="object" context="{'pos_session_id' : session_id}"/>
-                        <button name="refund_classic" string="Return Products" type="object" states="draft"/>
-                        <button name="%(point_of_sale.action_report_pos_receipt)d" string="Reprint" type="action" states="paid,done,invoiced"/>
+                        <button name="do_print_factura" string="Impresion Factura" type="object" states="paid,done,invoiced"/>
+                        <button name="refund_classic" string="Return Products" type="object" states="draft"/>              
                     </header>
                     <sheet>
                     <group col="4" colspan="4">
@@ -130,6 +130,20 @@
               </p><p>
                 To use the POS Classic you must click this.
               </p>
+            </field>
+        </record>
+
+
+        <record id="pos_order_factura" model="ir.ui.view">
+            <field name="name">pos.order.factura</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//button[@string='Reprint']" position="replace"> 
+                        <button name="do_print_factura" string="Impresion Factura" type="object" states="paid,done,invoiced"/>
+                    </xpath>
+                </data>
             </field>
         </record>
     </data>

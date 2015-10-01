@@ -10,7 +10,7 @@
 
             <frame id="rut"          x1="0.80cm" y1="9.80cm" width="06.0cm" height="01.00cm"/>
 
-            <frame id="c_final"      x1="6.8cm" y1="10.30cm" width="01.0cm" height="1.0cm"/>
+            <frame id="c_final"      x1="6.8cm" y1="10.0cm" width="01.0cm" height="1.0cm"/>
 
             <frame id="fecha"       x1="7.9cm"  y1="9.80cm" width="1.7cm" height="1.0cm"/>
 
@@ -18,7 +18,7 @@
 
             <frame id="cod_desc_cant_imp"         x1="0.8cm" y1="2.8cm" width="8.8cm" height="5.15cm"/>
 
-            <frame id="tablita"      x1="8.0cm" y1="1.45cm" width="1.6cm" height="1.5cm"/>
+            <frame id="tablita"      x1="8.0cm" y1="1.35cm" width="1.6cm" height="1.5cm"/>
 
             <!-- ################## Duplicado ################## -->
 
@@ -28,7 +28,7 @@
 
             <frame id="rut2"          x1="11.3cm" y1="9.80cm" width="06.0cm" height="01.00cm"/>
 
-            <frame id="c_final2"      x1="17.3cm" y1="10.30cm" width="01.0cm" height="1.0cm"/>
+            <frame id="c_final2"      x1="17.3cm" y1="10.0cm" width="01.0cm" height="1.0cm"/>
 
             <frame id="fecha2"       x1="18.4cm"  y1="9.80cm" width="1.7cm" height="1.0cm"/>
 
@@ -36,7 +36,7 @@
 
             <frame id="cod_desc_cant_imp2"         x1="11.3cm" y1="2.8cm" width="8.8cm" height="5.15cm"/>
 
-            <frame id="tablita2"      x1="18.5cm" y1="1.45cm" width="1.6cm" height="1.5cm"/>
+            <frame id="tablita2"      x1="18.5cm" y1="1.35cm" width="1.6cm" height="1.5cm"/>
 
         </pageTemplate>
 
@@ -51,21 +51,21 @@
         <initialize>
             <paraStyle name="all" alignment="justify"/>
         </initialize>
-        <paraStyle name="t_doc"  rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
+        <paraStyle name="t_doc"  rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
 
-        <paraStyle name="t_doc2"  rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
+        <paraStyle name="t_doc2"  rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
 
-        <paraStyle name="n_doc"   rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
+        <paraStyle name="n_doc"   rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
 
-        <paraStyle name="n_doc2"   rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
+        <paraStyle name="n_doc2"   rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="1" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica" />
 
         <paraStyle name="rut"       rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="0.0" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
-        <paraStyle name="rut2"       rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="1" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+        <paraStyle name="rut2"       rightIndent="0.0" leftIndent="0.0" fontSize="10" leading="0" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
-        <paraStyle name="c_final"   rightIndent="0.0" leftIndent="0.0" fontSize="33" leading="0" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+        <paraStyle name="c_final"   rightIndent="0.0" leftIndent="0.0" fontSize="15" leading="0" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
-        <paraStyle name="c_final2"   rightIndent="0.0" leftIndent="0.0" fontSize="33" leading="0" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
+        <paraStyle name="c_final2"   rightIndent="0.0" leftIndent="0.0" fontSize="15" leading="0" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
         <paraStyle name="fecha"    rightIndent="0.0" leftIndent="0.0" fontSize="8" leading="0.0" alignment="LEFT"   spaceBefore="0.0" spaceAfter="0.0" fontName="Helvetica"/>
 
@@ -83,7 +83,7 @@
 
         <paraStyle name="tabla_precios2"      rightIndent="0.0" leftIndent="0cm" fontSize="8"  leading="1" alignment="LEFT" spaceBefore="0.1cm" spaceAfter="0.1cm" fontName="Helvetica"/>
 
-        <paraStyle name="tablita"   rightIndent="0.0" leftIndent="0cm" fontSize="10"  leading="0" alignment="CENTER" spaceBefore="0cm" spaceAfter="0cm" fontName="Helvetica"/>
+        <paraStyle name="tablita"   rightIndent="0.0" leftIndent="0.0" fontSize="10"  leading="0" alignment="LEFT;TOP"  spaceBefore="0cm" spaceAfter="0cm" fontName="Helvetica"/>
 
         <blockTableStyle id="TableDet">
             <blockAlignment value="LEFT"/>
@@ -94,7 +94,6 @@
 
 <story>
 <para>[[ repeatIn(objects,'o') ]]</para>
-
     <condPageBreak height="1"/><para style='t_doc'>[[ (o.partner_id.identification_type == '1' and 'Factura' ) or 'Contado']]</para>
         <nextFrame/>
       <condPageBreak height="1"/><para style="n_doc">[[ (o.name)[4:] or '' ]]</para>
@@ -103,22 +102,22 @@
         <nextFrame/>
     <condPageBreak height="1"/><para style='c_final'>[[ (o.partner_id.identification_type == '0' and 'X' ) or '']]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='fecha'>[[ len ('/'.join((o.date).split('-'))) > 10 and format(('/'.join((o.date).split('-')))[:10] ) or format('/'.join((o.date).split('-')))]]</para>
+    <condPageBreak height="1"/><para style="fecha">[[ o.fecha_report ]]</para> <!--[[ len ('/'.join((o.date_order).split('-'))) > 10 and format(('/'.join((o.date_order).split('-')))[:10] ) or format('/'.join((o.date_order).split('-')))]]-->
         <nextFrame/>
     <condPageBreak height="1"/><para style='nomb_dir'>[[ (o.partner_id.name) or '' ]] </para><spacer length="0.3cm"/><para style='nomb_dir'>[[(o.partner_id.street) or '']]</para>
         <nextFrame/>
     <currentFrame name='cod_desc_cant_imp'/>
         <section>
-            <blockTable colsWidths="2.45cm,3.95cm,0.65cm,1.7cm" style="TableDet">
+            <blockTable colWidths="2.4cm,3.95cm,0.75cm,1.7cm">
                 <tr>[[ repeatIn(o.lines,'l') ]]
                 <!--Codigo-->
-                    <td><para style="cod_desc_cant_imp">[[ (l.product_id.ref_pattern) or '' ]]</para></td>
+                    <td><para style="cod_desc_cant_imp" alignment="LEFT">[[ (l.product_id.default_code) or '' ]]</para></td>
                 <!--Descripcion-->
-                    <td><para style="cod_desc_cant_imp">[[ len ( l.product_id.name ) > 13 and format(l.product_id.name[:10] + '...') or format(l.product_id.name)]]</para></td>
+                    <td><para style="cod_desc_cant_imp" alignment="LEFT">[[ len ( l.product_id.name ) > 13 and format(l.product_id.name[:10] + '...') or format(l.product_id.name)]]</para></td>
                 <!--Cantidad-->
-                    <td><para style="cod_desc_cant_imp">[[ str(int(l.qty)) or '' ]]</para></td>
+                    <td><para style="cod_desc_cant_imp" alignment="RIGHT">[[ str(int(l.qty)) or '' ]]</para></td>
                 <!--Importe-->
-                    <td><para style="cod_desc_cant_imp">[[ (l.price_subtotal_incl) or '' ]]</para></td>
+                    <td><para style="cod_desc_cant_imp" alignment="RIGHT">[[ ("%.2f" % (l.price_subtotal_incl)) or '' ]]</para></td>
                 </tr>
             </blockTable>
         </section>
@@ -126,13 +125,13 @@
         <section>
             <blockTable>
                 <tr>
-                    <td><para style="tablita" alignment="RIGHT">[[ (o.suma_subtotal) or '' ]]</para><spacer length="0.2cm"/></td>
+                    <td><para style="tablita" alignment="RIGHT">[[ ("%.2f" % (o.suma_subtotal)) or '' ]]</para><spacer length="0.2cm"/></td>
                 </tr>
                 <tr>
-                    <td><para style="tablita" alignment="RIGHT">[[ (o.amount_tax) or '' ]]</para><spacer length="0.2cm"/></td>
+                    <td><para style="tablita" alignment="RIGHT">[[ ("%.2f" % (o.amount_tax)) or '' ]]</para><spacer length="0.2cm"/></td>
                 </tr>
                 <tr>
-                    <td><para style="tablita" alignment="RIGHT">[[ (o.amount_total) or '' ]]</para></td>
+                    <td><para style="tablita" alignment="RIGHT">[[ ("%.2f" % (o.amount_total)) or '' ]]</para></td>
                 </tr>
             </blockTable>
         </section>
@@ -145,36 +144,36 @@
         <nextFrame/>
     <condPageBreak height="1"/><para style='c_final2'>[[ (o.partner_id.identification_type == '0' and 'X' ) or '']]</para>
         <nextFrame/>
-    <condPageBreak height="1"/><para style='fecha2'>[[ len ('/'.join((o.date).split('-'))) > 10 and format(('/'.join((o.date).split('-')))[:10] ) or format('/'.join((o.date).split('-')))]]</para>
+    <condPageBreak height="1"/><para style='fecha2'>[[ o.fecha_report ]]</para>
         <nextFrame/>
     <condPageBreak height="1"/><para style='nomb_dir2'>[[ (o.partner_id.name) or '' ]] </para><spacer length="0.3cm"/><para style='nomb_dir'>[[(o.partner_id.street) or '']]</para>
         <nextFrame/>
     <currentFrame name='cod_desc_cant_imp2'/>
         <section>
-            <blockTable colsWidths="2.45cm,3.95cm,0.65cm,1.7cm" style="TableDet">
+            <blockTable colWidths="2.4cm,3.95cm,0.75cm,1.7cm">
                 <tr>[[ repeatIn(o.lines,'l') ]]
                 <!--Codigo-->
-                    <td><para style="cod_desc_cant_imp">[[ (l.product_id.ref_pattern) or '' ]]</para></td>
+                    <td><para style="cod_desc_cant_imp" alignment="LEFT">[[ (l.product_id.default_code) or '' ]]</para></td>
                 <!--Descripcion-->
-                    <td><para style="cod_desc_cant_imp">[[ len ( l.product_id.name ) > 13 and format(l.product_id.name[:10] + '...') or format(l.product_id.name)]]</para></td>
+                    <td><para style="cod_desc_cant_imp" alignment="LEFT">[[ len ( l.product_id.name ) > 13 and format(l.product_id.name[:10] + '...') or format(l.product_id.name)]]</para></td>
                 <!--Cantidad-->
-                    <td><para style="cod_desc_cant_imp">[[ str(int(l.qty)) or '' ]]</para></td>
+                    <td><para style="cod_desc_cant_imp" alignment="RIGHT">[[ str(int(l.qty)) or '' ]]</para></td>
                 <!--Importe-->
-                    <td><para style="cod_desc_cant_imp">[[ (l.price_subtotal_incl) or '' ]]</para></td>
+                    <td><para style="cod_desc_cant_imp" alignment="RIGHT">[[ ("%.2f" % (l.price_subtotal_incl)) or '' ]]</para></td>
                 </tr>
             </blockTable>
         </section>
         <frameEnd/>
         <section>
-            <blockTable>
+            <blockTable style="TableDet" alignment="RIGHT">
                 <tr>
-                    <td><para style="tablita" alignment="RIGHT">[[ (o.suma_subtotal) or '' ]]</para><spacer length="0.2cm"/></td>
+                    <td><para style="tablita" alignment="RIGHT">[[ ("%.2f" % (o.suma_subtotal)) or '' ]]</para><spacer length="0.2cm"/></td>
                 </tr>
                 <tr>
-                    <td><para style="tablita" alignment="RIGHT">[[ (o.amount_tax) or '' ]]</para><spacer length="0.2cm"/></td>
+                    <td><para style="tablita" alignment="RIGHT">[[ ("%.2f" % (o.amount_tax)) or '' ]]</para><spacer length="0.2cm"/></td>
                 </tr>
                 <tr>
-                    <td><para style="tablita" alignment="RIGHT">[[ (o.amount_total) or '' ]]</para></td>
+                    <td><para style="tablita" alignment="RIGHT">[[ ("%.2f" % (o.amount_total)) or '' ]]</para></td>
                 </tr>
             </blockTable>
         </section>
